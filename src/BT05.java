@@ -9,6 +9,7 @@ public class BT05 {
         productList.put("Vehicle", 40);
         productList.entrySet().removeIf(entry -> entry.getValue() < 500 || entry.getValue() > 1000);
         List<Map.Entry<String, Integer>> listArray = new ArrayList<>(productList.entrySet());
+        listArray.sort(Comparator.comparing(Map.Entry::getValue));
         for (Map.Entry<String, Integer> entry : listArray) {
             System.out.println(entry.getKey() + " : " + entry.getValue());
         }
